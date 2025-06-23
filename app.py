@@ -91,12 +91,17 @@ else:
     st.plotly_chart(fig, use_container_width=True)
 
     # Map View
+            # 🗺️ India Map View - Final Fixed
     st.subheader("🗺️ India Map View - Transaction Amount by State")
-    map_path = f"phonepe_data/aggregated/transaction/statewise/{selected_year}/{selected_quarter}.json"
+
+    map_path = f"state_summary/{selected_year}/{selected_quarter}.json"
+    india_geojson = "india_state.geojson"
+
     if os.path.exists(map_path):
         with open(map_path, "r") as f:
             map_data = json.load(f)
 
+        # Create DataFrame
         state_records = []
         for state, info in map_data["data"]["states"].items():
             state_records.append({
@@ -104,21 +109,50 @@ else:
                 "Transaction Count": info["transactionCount"],
                 "Transaction Amount": info["transactionAmount"]
             })
-
         state_df = pd.DataFrame(state_records)
 
-        india_geojson = "https://raw.githubusercontent.com/ronak-07/India-GeoJSON/main/india_states.geojson"
+        # Normalize state names
+        state_df["State"] = state_df["State"].str.title().str.replace("-", " ").str.strip()
+        state_name_mapping = {
+            "Andaman & Nicobar Islands": "Andaman and Nicobar",
+            "Dadra & Nagar Haveli & Daman & Diu": "Dadra and Nagar Haveli",
+            "Jammu & Kashmir": "Jammu and Kashmir",
+            "Odisha": "Orissa",
+            "Uttarakhand": "Uttaranchal"
+}
+        state_df["State"] = state_df["State"].replace(state_name_mapping)
 
+        # Load GeoJSON and extract matching keys
+        with open(india_geojson, "r") as f:
+            gj = json.load(f)
+
+        geojson_states = [feature["properties"]["NAME_1"] for feature in gj["features"]]
+
+        mismatched = state_df[~state_df["State"].isin(geojson_states)]
+        if not mismatched.empty:
+            st.warning(f"⚠️ These states don't match GeoJSON and won't show: {mismatched['State'].tolist()}")
+
+        # Plot
         fig_map = px.choropleth(
-            state_df,
-            geojson=india_geojson,
-            featureidkey="properties.ST_NM",
+            state_df[state_df["State"].isin(geojson_states)],
+            geojson=gj,
+            featureidkey="properties.NAME_1",
             locations="State",
             color="Transaction Amount",
             color_continuous_scale="Oranges",
             title=f"State-wise Transactions ({selected_year} Q{selected_quarter})"
         )
-        fig_map.update_geos(fitbounds="locations", visible=False)
-        st.plotly_chart(fig_map, use_container_width=True)
-    else:
-        st.warning("⚠️ State-wise JSON not found. Please add it to 'aggregated/transaction/statewise/...'.")
+        fig_map.update_geos(
+            fitbounds="locations",
+            visible=False,
+            bgcolor='rgba(0,0,0,0)'  # removes white background
+)
+
+        fig_map.update_layout(
+            margin={"r":0,"t":50,"l":0,"b":0},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            height=650  # ⬆️ increase height
+)
+
+st.plotly_chart(fig_map, use_container_width=True)

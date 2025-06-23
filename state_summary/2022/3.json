@@ -1,0 +1,150 @@
+{
+  "data": {
+    "states": {
+      "Andaman & Nicobar Islands": {
+        "transactionCount": 1584379,
+        "transactionAmount": 3310631772.1373878
+      },
+      "Andhra Pradesh": {
+        "transactionCount": 642855035,
+        "transactionAmount": 1385077409712.1436
+      },
+      "Arunachal Pradesh": {
+        "transactionCount": 3939418,
+        "transactionAmount": 9025110785.048607
+      },
+      "Assam": {
+        "transactionCount": 86113811,
+        "transactionAmount": 161489079054.8985
+      },
+      "Bihar": {
+        "transactionCount": 437367385,
+        "transactionAmount": 791446486557.9156
+      },
+      "Chandigarh": {
+        "transactionCount": 13478173,
+        "transactionAmount": 20559757737.40585
+      },
+      "Chhattisgarh": {
+        "transactionCount": 158252587,
+        "transactionAmount": 220161558081.98898
+      },
+      "Dadra & Nagar Haveli & Daman & Diu": {
+        "transactionCount": 6465621,
+        "transactionAmount": 7520647359.499436
+      },
+      "Delhi": {
+        "transactionCount": 475592161,
+        "transactionAmount": 677612647116.1163
+      },
+      "Goa": {
+        "transactionCount": 13188687,
+        "transactionAmount": 19574265275.706333
+      },
+      "Gujarat": {
+        "transactionCount": 303239732,
+        "transactionAmount": 497437502209.4494
+      },
+      "Haryana": {
+        "transactionCount": 269361810,
+        "transactionAmount": 428054494578.0264
+      },
+      "Himachal Pradesh": {
+        "transactionCount": 25164868,
+        "transactionAmount": 37380782688.54041
+      },
+      "Jammu & Kashmir": {
+        "transactionCount": 22534394,
+        "transactionAmount": 40963554502.24823
+      },
+      "Jharkhand": {
+        "transactionCount": 146815332,
+        "transactionAmount": 229412884063.9579
+      },
+      "Karnataka": {
+        "transactionCount": 1189761328,
+        "transactionAmount": 1665918232611.024
+      },
+      "Kerala": {
+        "transactionCount": 119362904,
+        "transactionAmount": 162260419315.4295
+      },
+      "Ladakh": {
+        "transactionCount": 1190858,
+        "transactionAmount": 3605199350.373904
+      },
+      "Lakshadweep": {
+        "transactionCount": 15241,
+        "transactionAmount": 47580009.61750025
+      },
+      "Madhya Pradesh": {
+        "transactionCount": 731259559,
+        "transactionAmount": 1032908494249.664
+      },
+      "Maharashtra": {
+        "transactionCount": 1486389417,
+        "transactionAmount": 1947579187374.547
+      },
+      "Manipur": {
+        "transactionCount": 6352742,
+        "transactionAmount": 15381430267.299725
+      },
+      "Meghalaya": {
+        "transactionCount": 4359165,
+        "transactionAmount": 9603300797.12155
+      },
+      "Mizoram": {
+        "transactionCount": 659038,
+        "transactionAmount": 1946265612.067954
+      },
+      "Nagaland": {
+        "transactionCount": 1894113,
+        "transactionAmount": 5364400495.05083
+      },
+      "Odisha": {
+        "transactionCount": 386687326,
+        "transactionAmount": 564545557340.55
+      },
+      "Puducherry": {
+        "transactionCount": 7042727,
+        "transactionAmount": 10854317711.140947
+      },
+      "Punjab": {
+        "transactionCount": 84177897,
+        "transactionAmount": 149319443006.35474
+      },
+      "Rajasthan": {
+        "transactionCount": 767541360,
+        "transactionAmount": 1238489256318.2769
+      },
+      "Sikkim": {
+        "transactionCount": 2396758,
+        "transactionAmount": 5162880543.8914585
+      },
+      "Tamil Nadu": {
+        "transactionCount": 393496175,
+        "transactionAmount": 631879220373.2683
+      },
+      "Telangana": {
+        "transactionCount": 1628165401,
+        "transactionAmount": 2706325865752.0728
+      },
+      "Tripura": {
+        "transactionCount": 4256579,
+        "transactionAmount": 8648352804.911142
+      },
+      "Uttar Pradesh": {
+        "transactionCount": 703589072,
+        "transactionAmount": 1121370050898.776
+      },
+      "Uttarakhand": {
+        "transactionCount": 63996519,
+        "transactionAmount": 92641259938.36305
+      },
+      "West Bengal": {
+        "transactionCount": 356792388,
+        "transactionAmount": 704749898612.144
+      }
+    }
+  }
+}
